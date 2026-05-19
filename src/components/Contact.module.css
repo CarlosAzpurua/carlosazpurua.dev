@@ -1,0 +1,107 @@
+.section {
+  padding: 8rem 0 6rem;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.inner.visible { opacity: 1; transform: none; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+  border: 1px solid var(--cyan-dim);
+  background: var(--cyan-dim);
+  padding: 5px 14px;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+.headline em {
+  font-style: italic;
+  color: var(--muted);
+}
+.acc { color: var(--violet); }
+
+.sub {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 440px;
+  margin: 0 auto 2.5rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+.btnPrimary {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--violet);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 2px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btnPrimary:hover { opacity: 0.85; transform: translateY(-2px); }
+.btnGhost {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-md);
+  color: var(--muted);
+  padding: 14px 28px;
+  border-radius: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btnGhost:hover { border-color: var(--violet); color: var(--text); }
+
+.taglineWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.taglineLine {
+  display: block;
+  width: 60px; height: 1px;
+  background: var(--border-md);
+}
+.tagline {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
