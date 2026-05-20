@@ -29,7 +29,7 @@ export default function Contact() {
             Get in touch ↗
           </a>
           <a
-            href="https://www.linkedin.com/in/carlosazpurua/"
+            href="https://www.linkedin.com/in/carlosazpurua"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.btnGhost}

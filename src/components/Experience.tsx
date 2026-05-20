@@ -1,5 +1,11 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import SectionHeader from './SectionHeader'
+import SmartjobLogo from '../assets/logo_per_company/smart_job.png'
+import GlobantLogo from '../assets/logo_per_company/globant.jpeg'
+import AImpactLogo from '../assets/logo_per_company/aimpact_partners.jpeg'
+import GeniumLogo from '../assets/logo_per_company/genium.png'
+import AsambloLogo from '../assets/logo_per_company/asamblo.png'
+import HypeLogo from '../assets/logo_per_company/hype_interactivo.jpeg'
 import styles from './Experience.module.css'
 
 interface ExpItem {
@@ -9,6 +15,7 @@ interface ExpItem {
   desc: string
   tags: string[]
   badge?: { label: string; type: 'current' | 'lead' | 'mentor' | 'first' }
+  logo?: string
 }
 
 const EXPERIENCE: ExpItem[] = [
@@ -19,6 +26,7 @@ const EXPERIENCE: ExpItem[] = [
     desc: 'Building the full visual product and fast shipping system for Falabella — one of Latin America\'s largest retail groups. End-to-end ownership of the e-commerce frontend architecture.',
     tags: ['React', 'TypeScript', 'E-commerce', 'Fast Shipping'],
     badge: { label: 'Active', type: 'current' },
+    logo: SmartjobLogo,
   },
   {
     company: 'Globant',
@@ -27,6 +35,7 @@ const EXPERIENCE: ExpItem[] = [
     desc: 'Led the security codebase for Red Sea Global. Drove Storybook adoption and internal component library creation to support the system architect and unify design system standards across teams.',
     tags: ['React', 'Storybook', 'Design Systems', 'Leadership'],
     badge: { label: 'Tech Lead', type: 'lead' },
+    logo: GlobantLogo,
   },
   {
     company: 'AImpact',
@@ -34,6 +43,7 @@ const EXPERIENCE: ExpItem[] = [
     role: 'Sr. Fullstack Engineer',
     desc: 'Developed an AI-powered educational assistance system using a proprietary framework. Contributed to architecture decisions and grew both the product and the framework\'s core codebase.',
     tags: ['AI', 'Education Tech', 'Architecture', 'Framework Dev'],
+    logo: AImpactLogo,
   },
   {
     company: 'Genium',
@@ -42,6 +52,7 @@ const EXPERIENCE: ExpItem[] = [
     desc: 'Led base architecture for Hivemapper (crypto + maps with Gatsby). First tech lead role guiding 5 engineers on GoodVets — a US enterprise veterinary platform. Co-built Fiverr\'s component library alongside industry leaders.',
     tags: ['Gatsby', 'Crypto', 'Component Libraries', 'Team Lead ×5'],
     badge: { label: 'First Lead', type: 'first' },
+    logo: GeniumLogo,
   },
   {
     company: 'Asamblo',
@@ -50,6 +61,7 @@ const EXPERIENCE: ExpItem[] = [
     desc: 'Worked on drcontactlens.com, a US healthcare e-commerce platform. Met my engineering mentor here — the defining experience that shaped my approach to clean code and clean architecture.',
     tags: ['React', 'Clean Code', 'Clean Architecture', 'Healthcare'],
     badge: { label: 'Mentorship', type: 'mentor' },
+    logo: AsambloLogo,
   },
   {
     company: 'Hype Interativo',
@@ -58,6 +70,7 @@ const EXPERIENCE: ExpItem[] = [
     desc: 'Built a local gaming app connecting players through an esports tournament and competition system. The project that kicked everything off.',
     tags: ['JavaScript', 'Gaming', 'Esports', 'Tournaments'],
     badge: { label: 'Origin', type: 'first' },
+    logo: HypeLogo,
   },
 ]
 
@@ -70,8 +83,13 @@ function ExpRow({ item, index }: { item: ExpItem; index: number }) {
       style={{ transitionDelay: `${index * 0.05}s` }}
     >
       <div className={styles.left}>
-        <span className={styles.company}>{item.company}</span>
-        <span className={styles.period}>{item.period}</span>
+        <div className={styles.flex}>
+          {item.logo && <img src={item.logo} alt={`${item.company} logo`} className={styles.logo} />}
+          <div className={styles.left}>
+            <span className={styles.company}>{item.company}</span>
+            <span className={styles.period}>{item.period}</span>
+          </div>
+        </div>
         {item.badge && (
           <span className={`${styles.badge} ${styles[`badge_${item.badge.type}`]}`}>
             {item.badge.label}

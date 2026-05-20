@@ -22,6 +22,22 @@
   gap: 4px;
   padding-top: 3px;
 }
+.flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
 .company {
   font-size: 13px;
   font-weight: 500;
